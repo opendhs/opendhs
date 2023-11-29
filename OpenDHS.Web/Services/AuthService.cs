@@ -1,4 +1,4 @@
-namespace OpenDHS.Api.Services;
+namespace OpenDHS.Web.Services;
 
 public class AuthService
 {

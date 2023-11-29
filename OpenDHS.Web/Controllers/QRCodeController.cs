@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpenDHS.Shared.QRCode;
 
-namespace OpenDHS.Api.Controllers
+namespace OpenDHS.Web.Controllers
 {
     [Authorize]
     [Route("api/qrcode")]

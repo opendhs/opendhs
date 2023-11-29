@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OpenDHS.Api.Controllers
+namespace OpenDHS.Web.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]

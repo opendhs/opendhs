@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.StaticFiles;
 using OpenDHS.Shared;
 
-namespace OpenDHS.Api.Controllers
+namespace OpenDHS.Web.Controllers
 {
     [Route("api/media")]
     [ApiController]

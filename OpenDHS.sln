@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Shared", "OpenDHS.Shared\OpenDHS.Shared.csproj", "{EB58C440-D27E-4E91-9238-D09905F5E5E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Api", "OpenDHS.Api\OpenDHS.Api.csproj", "{CE235499-38BD-44F6-AE40-2945DC17F0D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Web", "OpenDHS.Web\OpenDHS.Web.csproj", "{2338CE73-379A-448B-9FF6-EFA3CA759FFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +17,10 @@ Global
 		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE235499-38BD-44F6-AE40-2945DC17F0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE235499-38BD-44F6-AE40-2945DC17F0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE235499-38BD-44F6-AE40-2945DC17F0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE235499-38BD-44F6-AE40-2945DC17F0D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8152BA3F-B5FC-4DCE-AF89-4726E232AF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8152BA3F-B5FC-4DCE-AF89-4726E232AF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8152BA3F-B5FC-4DCE-AF89-4726E232AF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8152BA3F-B5FC-4DCE-AF89-4726E232AF70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
