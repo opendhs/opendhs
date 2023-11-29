@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddCorsMiddleware();
 builder.AddAuthMiddleware();
 builder.Services.AddControllers();
+builder.Services.AddRazorPages();   
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
@@ -21,5 +22,6 @@ app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
 app.UseOpenDHSServices();
 app.MapControllers();
+app.MapRazorPages();
 
 app.Run();
