@@ -1,0 +1,10 @@
+{
+   "Name": "quickweb-000101--JrE133_dK",
+   "DB": "C:\\PATH\\DATI",
+   "Driver": "C:\\Program Files (x86)\\Common Files\\PC SOFT\\25.0\\ODBC\\Win64x86\\wd250hfo64.dll",
+   "uuid": "000101--JrE133_dK",
+   "societa": "Orion SOC",
+   "wssUrl": "wss://quickweb-wss.orionedp.ch",
+   "logLevel": 2,
+   "logCleanTime": 1
+}
