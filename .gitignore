@@ -3,4 +3,6 @@
 .vs
 obj
 bin
-/OpenDHS.Web/opendhs-development.db
+*.db
+*.db-shm
+*.db-wal

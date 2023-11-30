@@ -1,7 +1,14 @@
-﻿@page
+﻿@page 
 @model OpenDHS.Web.Pages.IndexModel
 @{
 }
 <div class="container p-4">
   
+    <h1>@Model.Message</h1>
+
+    <form asp-page-handler="Click" method="post">
+        <button type="submit">
+            Haz click
+        </button>
+    </form>
 </div>

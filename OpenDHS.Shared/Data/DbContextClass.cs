@@ -1,24 +1,27 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using OpenDHS.Shared.Data;
 
 namespace OpenDHS.Shared
 {
-    public class DbContextClass : DbContext
+    public class DbContextClass : IdentityDbContext<UserEntity, RoleEntity, Guid>
     {
         protected readonly IConfiguration? Configuration;
 
-        public string DbPath { get; }
+        public string? DbPath { get; }
 
         public DbContextClass()
         {
-            DbPath = Path.Combine(Environment.CurrentDirectory, "opensalus-development.db");
+            DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
         }
 
         public DbContextClass(IConfiguration configuration)
         {
             Configuration = configuration;
-            DbPath = Path.Combine(Environment.CurrentDirectory, "opensalus-development.db");
+            DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             void DevelopmentSettings(DbContextOptionsBuilder options)
@@ -41,7 +44,7 @@ namespace OpenDHS.Shared
 
             // options.UseNpgsql(dbconnectiontring);
             options.UseSqlite(dbconnectiontring);
-           
+
         }
 
         public DbSet<MediaEntity> FileDetails { get; set; }

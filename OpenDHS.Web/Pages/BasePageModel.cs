@@ -9,6 +9,9 @@ namespace OpenDHS.Web.Pages
         [ViewData]
         public string Title { get; set; } = "Welcome";
 
+        [ViewData]
+        public string MetaDescription { get; set; } = String.Empty;
+
         public string Message { get; set; } = "Handler called";
     }
 }
