@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using OpenDHS.Shared;
+using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
 
@@ -6,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add-Registering services to the container.
 builder.AddCorsMiddleware();
+
+
+
 builder.AddAuthMiddleware();
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();   
