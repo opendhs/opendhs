@@ -1,4 +1,5 @@
 using OpenDHS.Shared;
+using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,7 @@ builder.Services.AddRazorPages();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
-builder.Services.AddOpenDHSServices();
+builder.Services.AddOpenDHSServices<OpenDHSDataContext>();
 
 
 var app = builder.Build();
@@ -20,7 +21,7 @@ app.UseCorsMiddleware();
 app.UseStaticFiles();
 app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
-app.UseOpenDHSServices();
+app.UseOpenDHSServices<OpenDHSDataContext>();
 app.MapControllers();
 app.MapRazorPages();
 

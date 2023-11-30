@@ -7,46 +7,14 @@ namespace OpenDHS.Shared
 {
     public class DbContextClass : IdentityDbContext<UserEntity, RoleEntity, Guid>
     {
-        protected readonly IConfiguration? Configuration;
-
-        public string? DbPath { get; }
-
-        public DbContextClass()
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
+            builder.Entity<UserEntity>().ToTable("Users");
+            builder.Entity<RoleEntity>().ToTable("Roles");
+
+            base.OnModelCreating(builder);
         }
-
-        public DbContextClass(IConfiguration configuration)
-        {
-            Configuration = configuration;
-            DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            void DevelopmentSettings(DbContextOptionsBuilder options)
-            {
-                // options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
-                options.UseSqlite($"Data Source={DbPath}");
-            }
-
-            if (Configuration == null)
-            {
-                DevelopmentSettings(options);
-                return;
-            }
-            var dbconnectiontring = Configuration?.GetConnectionString("DefaultConnection");
-            if (dbconnectiontring == null)
-            {
-                DevelopmentSettings(options);
-                return;
-            }
-
-            // options.UseNpgsql(dbconnectiontring);
-            options.UseSqlite(dbconnectiontring);
-
-        }
-
+        
         public DbSet<MediaEntity> FileDetails { get; set; }
     }
 }

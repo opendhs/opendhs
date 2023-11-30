@@ -9,16 +9,16 @@ namespace OpenDHS.Shared
 {
     public static class WebStartupExtensions
     {
-        public static IServiceCollection AddOpenDHSServices(this IServiceCollection services)
+        public static IServiceCollection AddOpenDHSServices<TDBContext>(this IServiceCollection services) where TDBContext : DbContextClass
         {
             OpensalusEnv.SetWebRoot();
-            services.AddDbContext<DbContextClass>();
+            services.AddDbContext<TDBContext>();
             services.AddScoped<QRCodeService>();
             services.AddScoped<IMediaService, MediaService>();
 
             return services;
         }
-            public static IApplicationBuilder UseOpenDHSServices(this IApplicationBuilder app)
+            public static IApplicationBuilder UseOpenDHSServices<TDBContext>(this IApplicationBuilder app) where TDBContext : DbContextClass
         {
             if (app == null)
             {
@@ -27,7 +27,7 @@ namespace OpenDHS.Shared
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 var dbContext = scope.ServiceProvider
-                    .GetRequiredService<DbContextClass>();
+                    .GetRequiredService<TDBContext>();
                 dbContext.Database.EnsureCreated();
             }         
             return app;
