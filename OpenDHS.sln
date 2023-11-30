@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Shared", "OpenDHS.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Web", "OpenDHS.Web\OpenDHS.Web.csproj", "{2338CE73-379A-448B-9FF6-EFA3CA759FFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDHS.Shared.Test", "OpenDHS.Shared.Test\OpenDHS.Shared.Test.csproj", "{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
