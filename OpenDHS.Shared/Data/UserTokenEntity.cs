@@ -2,7 +2,7 @@
 
 namespace OpenDHS.Shared.Data
 {
-    public class UserRoleEntity : IdentityUserRole<Guid>
+    public class UserTokenEntity : IdentityUserToken<Guid>
     {
     }
 }

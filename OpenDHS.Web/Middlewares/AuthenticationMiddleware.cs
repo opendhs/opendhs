@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
@@ -12,10 +13,7 @@ namespace OpenDHS.Web.Middlewares
         public static void AddAuthMiddleware(this WebApplicationBuilder builder)
         {
             //TODO: Evaluate JwtBearerToken Conflicts
-            builder.Services.AddIdentity<UserEntity, RoleEntity>()
-                .AddEntityFrameworkStores<OpenDHSDataContext>()
-                .AddDefaultTokenProviders();
-
+           
             // Registering Authentication Middleware
             builder.Services.AddAuthentication((opt) =>
             {

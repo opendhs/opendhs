@@ -1,51 +1,28 @@
 using Microsoft.EntityFrameworkCore;
+using OpenDHS.Shared;
 
 namespace OpenDHS.Web.Data;
 
-public class OpenDHSDataContext : OpenDHS.Shared.DbContextClass
+public class OpenDHSWebContext : DbContextClass
 {
-    private readonly IConfiguration? Configuration;
-
-    public string? DbPath { get; }
-
-    public OpenDHSDataContext()
+    
+    public OpenDHSWebContext(DbContextOptions<OpenDHSWebContext> options)
+       : base(options)
     {
-        DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
     }
 
-    public OpenDHSDataContext(IConfiguration configuration)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        Configuration = configuration;
-        DbPath = Path.Combine(Environment.CurrentDirectory, "opendhs-development.db");
+        base.OnConfiguring(optionsBuilder);
+        if (!optionsBuilder.IsConfigured) {
+            optionsBuilder.UseNpgsql(@"Host=localhost;Database=opendhs-development-migrations;Username=postgres;Password=postgres");
+        }
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        void DevelopmentSettings(DbContextOptionsBuilder options)
-        {
-            // options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
-            options.UseSqlite($"Data Source={DbPath}");
-        }
-
-        if (Configuration == null)
-        {
-            DevelopmentSettings(options);
-            return;
-        }
-        var dbconnectiontring = Configuration?.GetConnectionString("DefaultConnection");
-        if (dbconnectiontring == null)
-        {
-            DevelopmentSettings(options);
-            return;
-        }
-
-        // options.UseNpgsql(dbconnectiontring);
-        options.UseSqlite(dbconnectiontring);
-
-    }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        // Customize the ASP.NET Identity model and override the defaults if needed.
+        // For example, you can rename the ASP.NET Identity table names and more.
+        // Add your customizations after calling base.OnModelCreating(builder);
     }
 }

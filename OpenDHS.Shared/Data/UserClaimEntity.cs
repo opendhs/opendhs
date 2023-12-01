@@ -2,7 +2,7 @@
 
 namespace OpenDHS.Shared.Data
 {
-    public class UserClaimEntity : IdentityUserClaim<string>
+    public class UserClaimEntity : IdentityUserClaim<Guid>
     {
     }
 }

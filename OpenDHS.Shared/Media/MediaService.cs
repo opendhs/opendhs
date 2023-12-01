@@ -4,18 +4,13 @@ using OpenDHS.Shared.Extensions;
 
 namespace OpenDHS.Shared
 {
-    public class MediaService : IMediaService
+    public class MediaService<TDBContext> : IMediaService where TDBContext : DbContextClass
     {
-        private readonly DbContextClass dbContextClass;
+        private readonly TDBContext dbContextClass;
 
-        public MediaService()
+        public MediaService(TDBContext dbContext)
         {
-            this.dbContextClass = new DbContextClass();
-        }
-
-        public MediaService(DbContextClass dbContextClass)
-        {
-            this.dbContextClass = dbContextClass;
+            dbContextClass = dbContext;
         }
 
         public async Task<MediaEntity> PostFileAsync(IFormFile fileData, bool isPublic = false)
@@ -39,7 +34,7 @@ namespace OpenDHS.Shared
 
                 StoreMediaToPublicFile(fileDetails);
 
-                var result = dbContextClass.FileDetails.Add(fileDetails);
+                var result = dbContextClass.Medias.Add(fileDetails);
                 await dbContextClass.SaveChangesAsync();
 
                 return fileDetails;
@@ -77,7 +72,7 @@ namespace OpenDHS.Shared
                         StoreMediaToPublicFile(fileDetails);
                     }
 
-                    var result = dbContextClass.FileDetails.Add(fileDetails);
+                    var result = dbContextClass.Medias.Add(fileDetails);
                 }             
                 await dbContextClass.SaveChangesAsync();
             }
@@ -91,7 +86,7 @@ namespace OpenDHS.Shared
         {
             try
             {
-                var file =  await dbContextClass.FileDetails.Where(x => x.Uuid == uuid).FirstOrDefaultAsync();
+                var file =  await dbContextClass.Medias.Where(x => x.Uuid == uuid).FirstOrDefaultAsync();
                 if (file == null) return null;
                 if (file.FileName == null) return null;
                 if (file.FileData == null) return null;

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using OpenDHS.Shared.Extensions;
 using OpenDHS.Shared.QRCode;
 
@@ -12,9 +10,8 @@ namespace OpenDHS.Shared
         public static IServiceCollection AddOpenDHSServices<TDBContext>(this IServiceCollection services) where TDBContext : DbContextClass
         {
             OpensalusEnv.SetWebRoot();
-            services.AddDbContext<TDBContext>();
             services.AddScoped<QRCodeService>();
-            services.AddScoped<IMediaService, MediaService>();
+            services.AddScoped<IMediaService, MediaService<TDBContext>>();
 
             return services;
         }

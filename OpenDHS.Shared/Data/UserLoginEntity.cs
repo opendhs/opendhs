@@ -2,7 +2,7 @@
 
 namespace OpenDHS.Shared.Data
 {
-    public class UserLoginEntity : IdentityUserLogin<string>
+    public class UserLoginEntity : IdentityUserLogin<Guid>
     {
     }
 }
