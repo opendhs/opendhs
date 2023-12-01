@@ -1,13 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using OpenDHS.Shared.Data;
 
-//IdentityDbContext<
-//       ApplicationUser, ApplicationRole, string,
-//       IdentityUserClaim<string>, ApplicationUserRole, IdentityUserLogin<string>,
-//       IdentityRoleClaim<string>, IdentityUserToken<string>>
 
 namespace OpenDHS.Shared
 {
@@ -19,6 +14,31 @@ namespace OpenDHS.Shared
         public DbContextClass(DbContextOptions options)
       : base(options)
         {
+            ChangeTracker.StateChanged += ChangeTracker_StateChanged;
+            ChangeTracker.Tracked += ChangeTracker_StateChanged;
+        }
+
+
+        private void ChangeTracker_StateChanged(object? sender, EntityEntryEventArgs e)
+        {
+            if (e.Entry.Entity is IHasTimestamps entityWithTimestamps)
+            {
+                switch (e.Entry.State)
+                {
+                    case EntityState.Deleted:
+                        entityWithTimestamps.DeletedAt = DateTime.UtcNow;
+                        Console.WriteLine($"Stamped for delete: {e.Entry.Entity}");
+                        break;
+                    case EntityState.Modified:
+                        entityWithTimestamps.UpdatedAt = DateTime.UtcNow;
+                        Console.WriteLine($"Stamped for update: {e.Entry.Entity}");
+                        break;
+                    case EntityState.Added:
+                        entityWithTimestamps.AddedAt = DateTime.UtcNow;
+                        Console.WriteLine($"Stamped for insert: {e.Entry.Entity}");
+                        break;
+                }
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -39,5 +59,6 @@ namespace OpenDHS.Shared
         
         public DbSet<MediaEntity> Medias { get; set; }
     }
+
 }
 
