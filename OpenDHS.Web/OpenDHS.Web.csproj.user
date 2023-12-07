@@ -20,6 +20,6 @@
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
-    <WebStackScaffolding_DbContextTypeFullName>OpenDHS.Web.Data.OpenDHSWebContext</WebStackScaffolding_DbContextTypeFullName>
+    <WebStackScaffolding_DbContextTypeFullName>OpenDHS.Web.Data.OpenDHSDataContext</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
 </Project>

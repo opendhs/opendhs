@@ -1,0 +1,69 @@
+﻿@page
+@model OpenDHS.Web.Areas.Manage.Pages.History.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HistoryEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.UserName" class="control-label"></label>
+                <input asp-for="HistoryEntity.UserName" class="form-control" />
+                <span asp-validation-for="HistoryEntity.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.UserId" class="control-label"></label>
+                <input asp-for="HistoryEntity.UserId" class="form-control" />
+                <span asp-validation-for="HistoryEntity.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.Entity" class="control-label"></label>
+                <input asp-for="HistoryEntity.Entity" class="form-control" />
+                <span asp-validation-for="HistoryEntity.Entity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.Description" class="control-label"></label>
+                <input asp-for="HistoryEntity.Description" class="form-control" />
+                <span asp-validation-for="HistoryEntity.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.Snapshop" class="control-label"></label>
+                <input asp-for="HistoryEntity.Snapshop" class="form-control" />
+                <span asp-validation-for="HistoryEntity.Snapshop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.AddedAt" class="control-label"></label>
+                <input asp-for="HistoryEntity.AddedAt" class="form-control" />
+                <span asp-validation-for="HistoryEntity.AddedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.UpdatedAt" class="control-label"></label>
+                <input asp-for="HistoryEntity.UpdatedAt" class="form-control" />
+                <span asp-validation-for="HistoryEntity.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HistoryEntity.DeletedAt" class="control-label"></label>
+                <input asp-for="HistoryEntity.DeletedAt" class="form-control" />
+                <span asp-validation-for="HistoryEntity.DeletedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

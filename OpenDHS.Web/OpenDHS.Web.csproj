@@ -45,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Manage\Pages\History\" />
     <Folder Include="Migrations\" />
     <Folder Include="Models\" />
     <Folder Include="Pages\" />
