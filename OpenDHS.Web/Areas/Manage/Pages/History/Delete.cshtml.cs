@@ -22,7 +22,7 @@ namespace OpenDHS.Web.Areas.Manage.Pages.History
         [BindProperty]
       public HistoryEntity HistoryEntity { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(Guid? id)
         {
             if (id == null || _context.History == null)
             {

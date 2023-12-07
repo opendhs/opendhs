@@ -24,11 +24,9 @@ namespace OpenDHS.Web.Migrations
 
             modelBuilder.Entity("OpenDHS.Shared.Data.DataBlockEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -37,11 +35,11 @@ namespace OpenDHS.Web.Migrations
                         .IsRequired()
                         .HasColumnType("jsonb");
 
-                    b.Property<int>("DataContainerID")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("DataContainerID")
+                        .HasColumnType("uuid");
 
-                    b.Property<int>("DataContanerId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("DataContanerId")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
@@ -54,11 +52,11 @@ namespace OpenDHS.Web.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PageContainerID")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("PageContainerID")
+                        .HasColumnType("uuid");
 
-                    b.Property<int>("PageContanerId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("PageContanerId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -78,11 +76,9 @@ namespace OpenDHS.Web.Migrations
 
             modelBuilder.Entity("OpenDHS.Shared.Data.DataContainerEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -104,11 +100,9 @@ namespace OpenDHS.Web.Migrations
 
             modelBuilder.Entity("OpenDHS.Shared.Data.HistoryEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -144,13 +138,39 @@ namespace OpenDHS.Web.Migrations
                     b.ToTable("History", (string)null);
                 });
 
+            modelBuilder.Entity("OpenDHS.Shared.Data.LanguageEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Languages", (string)null);
+                });
+
             modelBuilder.Entity("OpenDHS.Shared.Data.PageContainerEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -245,6 +265,42 @@ namespace OpenDHS.Web.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("Roles", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.TranslationEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("LanguageId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Translation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("Key")
+                        .IsUnique();
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Translations", (string)null);
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.UserClaimEntity", b =>
@@ -433,11 +489,9 @@ namespace OpenDHS.Web.Migrations
 
             modelBuilder.Entity("OpenDHS.Shared.MediaEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -459,9 +513,6 @@ namespace OpenDHS.Web.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("Uuid")
-                        .HasColumnType("uuid");
 
                     b.HasKey("ID");
 
@@ -494,6 +545,17 @@ namespace OpenDHS.Web.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.TranslationEntity", b =>
+                {
+                    b.HasOne("OpenDHS.Shared.Data.LanguageEntity", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Language");
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.UserClaimEntity", b =>

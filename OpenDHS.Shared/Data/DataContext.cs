@@ -64,8 +64,12 @@ namespace OpenDHS.Shared
             builder.Entity<DataBlockEntity>().ToTable("DataBlocks");
             builder.Entity<DataContainerEntity>().ToTable("DataContainers");
             builder.Entity<PageContainerEntity>().ToTable("Pages");
-          
-
+            builder.Entity<LanguageEntity>().ToTable("Languages");
+            builder.Entity<TranslationEntity>((entity) =>
+            {
+                entity.ToTable("Translations");
+                entity.HasIndex(e => e.Key).IsUnique();
+            });
         }
         
         public DbSet<MediaEntity> Medias { get; set; }

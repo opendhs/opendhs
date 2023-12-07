@@ -19,11 +19,11 @@ namespace OpenDHS.Shared.Data
 
 
         //Relations
-        public int DataContanerId { get; set; } // Required foreign key property
+        public Guid DataContanerId { get; set; } // Required foreign key property
         public DataContainerEntity DataContainer { get; set; } = null!; // Required reference navigation to principal
 
         //Relations
-        public int PageContanerId { get; set; } // Required foreign key property
+        public Guid PageContanerId { get; set; } // Required foreign key property
         public PageContainerEntity PageContainer { get; set; } = null!; // Required reference navigation to principal
     }
 }

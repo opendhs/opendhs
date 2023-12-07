@@ -15,7 +15,7 @@ namespace OpenDHS.Shared.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public Guid ID { get; set; }
 
         [Required]
         public DateTime AddedAt { get; set; } = DateTime.UtcNow;
