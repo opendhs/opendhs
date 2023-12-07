@@ -23,7 +23,6 @@ namespace OpenDHS.Shared.Data
         [Required]
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-        [Required]
         public DateTime DeletedAt { get; set; } = DateTime.UtcNow;
     }
 }

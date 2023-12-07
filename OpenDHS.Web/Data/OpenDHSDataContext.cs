@@ -1,12 +1,11 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using OpenDHS.Shared;
 
 namespace OpenDHS.Web.Data;
 
-public class OpenDHSWebContext : DbContextClass
+public class OpenDHSDataContext : DataContext
 {
-    
-    public OpenDHSWebContext(DbContextOptions<OpenDHSWebContext> options)
+    public OpenDHSDataContext(DbContextOptions<OpenDHSDataContext> options)
        : base(options)
     {
     }

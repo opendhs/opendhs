@@ -4,7 +4,7 @@ using OpenDHS.Shared.Extensions;
 
 namespace OpenDHS.Shared
 {
-    public class MediaService<TDBContext> : IMediaService where TDBContext : DbContextClass
+    public class MediaService<TDBContext> : IMediaService where TDBContext : DataContext
     {
         private readonly TDBContext dbContextClass;
 
