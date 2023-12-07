@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OpenDHS.Finance\OpenDHS.Finance.csproj" />
     <ProjectReference Include="..\OpenDHS.Shared\OpenDHS.Shared.csproj" />
   </ItemGroup>
 

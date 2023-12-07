@@ -55,6 +55,8 @@ namespace OpenDHS.Shared
             builder.Entity<RoleClaimEntity>().ToTable("RoleClaims");
 
             builder.Entity<MediaEntity>().ToTable("Medias");
+
+            builder.Entity<BlockEntity>().ToTable("Blocks");
         }
         
         public DbSet<MediaEntity> Medias { get; set; }
