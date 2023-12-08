@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OpenDHS.Web.Data;
@@ -11,12 +10,10 @@ using OpenDHS.Web.Data;
 
 namespace OpenDHS.Web.Migrations
 {
-    [DbContext(typeof(OpenDHSWebContext))]
-    [Migration("20231201171031_UpdateHistoryEntityProperties")]
-    partial class UpdateHistoryEntityProperties
+    [DbContext(typeof(OpenDHSDataContext))]
+    partial class OpenDHSDataContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,6 +21,182 @@ namespace OpenDHS.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.DataBlockEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Data")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<Guid>("DataContainerID")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("DataContanerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("PageContainerID")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("PageContanerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("DataContainerID");
+
+                    b.HasIndex("PageContainerID");
+
+                    b.ToTable("DataBlocks", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.DataContainerEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("DataContainers", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.HistoryEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Entity")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Snapshop")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("History", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.LanguageEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Languages", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.PageContainerEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("MetaKeywords")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Pages", (string)null);
+                });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.RoleClaimEntity", b =>
                 {
@@ -92,6 +265,42 @@ namespace OpenDHS.Web.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("Roles", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.TranslationEntity", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("LanguageId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Translation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("Key")
+                        .IsUnique();
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Translations", (string)null);
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.UserClaimEntity", b =>
@@ -280,11 +489,9 @@ namespace OpenDHS.Web.Migrations
 
             modelBuilder.Entity("OpenDHS.Shared.MediaEntity", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("timestamp with time zone");
@@ -307,12 +514,28 @@ namespace OpenDHS.Web.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("Uuid")
-                        .HasColumnType("uuid");
-
                     b.HasKey("ID");
 
                     b.ToTable("Medias", (string)null);
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.DataBlockEntity", b =>
+                {
+                    b.HasOne("OpenDHS.Shared.Data.DataContainerEntity", "DataContainer")
+                        .WithMany("DataBlocks")
+                        .HasForeignKey("DataContainerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OpenDHS.Shared.Data.PageContainerEntity", "PageContainer")
+                        .WithMany("PageBlocks")
+                        .HasForeignKey("PageContainerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DataContainer");
+
+                    b.Navigation("PageContainer");
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.RoleClaimEntity", b =>
@@ -322,6 +545,17 @@ namespace OpenDHS.Web.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.TranslationEntity", b =>
+                {
+                    b.HasOne("OpenDHS.Shared.Data.LanguageEntity", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Language");
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.UserClaimEntity", b =>
@@ -364,6 +598,16 @@ namespace OpenDHS.Web.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.DataContainerEntity", b =>
+                {
+                    b.Navigation("DataBlocks");
+                });
+
+            modelBuilder.Entity("OpenDHS.Shared.Data.PageContainerEntity", b =>
+                {
+                    b.Navigation("PageBlocks");
                 });
 #pragma warning restore 612, 618
         }

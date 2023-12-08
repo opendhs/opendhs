@@ -4,7 +4,7 @@ using OpenDHS.Shared.Extensions;
 
 namespace OpenDHS.Shared
 {
-    public class MediaService<TDBContext> : IMediaService where TDBContext : DbContextClass
+    public class MediaService<TDBContext> : IMediaService where TDBContext : DataContext
     {
         private readonly TDBContext dbContextClass;
 
@@ -19,8 +19,7 @@ namespace OpenDHS.Shared
             {
                 var fileDetails = new MediaEntity()
                 {
-                    ID = 0,
-                    Uuid = Guid.NewGuid(),
+                    ID = Guid.NewGuid(),
                     FileName = fileData.FileName,
                     FileType = MediaType.GENERIC,
                     IsPublic = isPublic
@@ -55,7 +54,7 @@ namespace OpenDHS.Shared
                 {
                     var fileDetails = new MediaEntity()
                     {
-                        ID = 0,
+                        ID = Guid.NewGuid(),
                         FileName = file.FileDetails?.FileName,
                         FileType = MediaType.GENERIC,
                         IsPublic = file.IsPublic
@@ -86,7 +85,7 @@ namespace OpenDHS.Shared
         {
             try
             {
-                var file =  await dbContextClass.Medias.Where(x => x.Uuid == uuid).FirstOrDefaultAsync();
+                var file =  await dbContextClass.Medias.Where(x => x.ID == uuid).FirstOrDefaultAsync();
                 if (file == null) return null;
                 if (file.FileName == null) return null;
                 if (file.FileData == null) return null;
@@ -133,7 +132,7 @@ namespace OpenDHS.Shared
                     Directory.CreateDirectory(mediaPublicDirPath);
 
                 var extension = Path.GetExtension(fileDetails.FileName);
-                var filePath = Path.Combine(mediaPublicDirPath, fileDetails.Uuid.ToString() + extension);
+                var filePath = Path.Combine(mediaPublicDirPath, fileDetails.ID.ToString() + extension);
                 if (fileDetails == null || fileDetails.FileData == null) return;
                 File.WriteAllBytes(filePath, fileDetails.FileData);
             }

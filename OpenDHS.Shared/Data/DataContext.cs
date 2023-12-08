@@ -6,12 +6,12 @@ using OpenDHS.Shared.Data;
 
 namespace OpenDHS.Shared
 {
-    public class DbContextClass
+    public class DataContext
         : IdentityDbContext<UserEntity, RoleEntity, Guid,
         UserClaimEntity, UserRoleEntity, UserLoginEntity,
         RoleClaimEntity, UserTokenEntity>
     {
-        public DbContextClass(DbContextOptions options)
+        public DataContext(DbContextOptions options)
       : base(options)
         {
             ChangeTracker.StateChanged += ChangeTracker_StateChanged;
@@ -41,6 +41,11 @@ namespace OpenDHS.Shared
             }
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -55,11 +60,24 @@ namespace OpenDHS.Shared
             builder.Entity<RoleClaimEntity>().ToTable("RoleClaims");
 
             builder.Entity<MediaEntity>().ToTable("Medias");
-
-            builder.Entity<BlockEntity>().ToTable("Blocks");
+            builder.Entity<HistoryEntity>().ToTable("History");
+            builder.Entity<DataBlockEntity>().ToTable("DataBlocks");
+            builder.Entity<DataContainerEntity>().ToTable("DataContainers");
+            builder.Entity<PageContainerEntity>().ToTable("Pages");
+            builder.Entity<LanguageEntity>().ToTable("Languages");
+            builder.Entity<TranslationEntity>((entity) =>
+            {
+                entity.ToTable("Translations");
+                entity.HasIndex(e => e.Key).IsUnique();
+            });
         }
         
         public DbSet<MediaEntity> Medias { get; set; }
+        public DbSet<HistoryEntity> History { get; set; }
+        public DbSet<DataBlockEntity> DataBlocks { get; set; }
+        public DbSet<DataContainerEntity> DataContainers { get; set; }
+        public DbSet<PageContainerEntity> Pages { get; set; }
+
     }
 
 }

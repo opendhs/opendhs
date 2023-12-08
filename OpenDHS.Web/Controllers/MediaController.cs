@@ -39,9 +39,9 @@ namespace OpenDHS.Web.Controllers
                 {
 
                     return Ok(new MediaModel { 
-                        Uuid = result.Uuid,
+                        Id = result.ID,
                         FileName = result.FileName ?? "",
-                        FileUrl = @"/media/" + result.Uuid.ToString() + fileExtension,
+                        FileUrl = @"/media/" + result.ID.ToString() + fileExtension,
                         IsPublic = result.IsPublic
                     });
 
@@ -49,7 +49,7 @@ namespace OpenDHS.Web.Controllers
                 else {
                      return Ok(new MediaModel
                     {
-                        Uuid = result.Uuid,
+                        Id = result.ID,
                         FileName = result.FileName ?? "",
                         IsPublic = result.IsPublic
                     });

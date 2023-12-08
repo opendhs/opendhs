@@ -7,9 +7,9 @@ using OpenDHS.Web.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnection' not found.");
 
-builder.Services.AddDbContext<OpenDHSWebContext>(options => options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<OpenDHSDataContext>(options => options.UseNpgsql(connectionString));
 
-builder.Services.AddDefaultIdentity<UserEntity>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<OpenDHSWebContext>();
+builder.Services.AddDefaultIdentity<UserEntity>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<OpenDHSDataContext>();
 
 // Add-Registering services to the container.
 builder.AddCorsMiddleware();
@@ -19,7 +19,7 @@ builder.Services.AddRazorPages();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
-builder.Services.AddOpenDHSServices<OpenDHSWebContext>();
+builder.Services.AddOpenDHSServices<OpenDHSDataContext>();
 
 
 var app = builder.Build();
@@ -28,7 +28,7 @@ app.UseCorsMiddleware();
 app.UseStaticFiles();
 app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
-app.UseOpenDHSServices<OpenDHSWebContext>();
+app.UseOpenDHSServices<OpenDHSDataContext>();
 app.MapControllers();
 app.MapRazorPages();
 
