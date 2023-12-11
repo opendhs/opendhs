@@ -3,6 +3,7 @@ using OpenDHS.Shared;
 using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnection' not found.");
