@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Projects\opendhs\Sites\OpenDHS.StudioMaggio.Site\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2023-12-12T20:49:51.5625028Z;True|2023-12-12T21:41:34.4063010+01:00;True|2023-12-04T15:57:27.4162822+01:00;True|2023-12-04T15:47:44.6634481+01:00;True|2023-12-04T15:23:18.5719054+01:00;True|2023-12-04T14:28:05.5015319+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

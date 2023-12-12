@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Web", "OpenDHS.Web\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Shared.Test", "OpenDHS.Shared.Test\OpenDHS.Shared.Test.csproj", "{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDHS.Finance", "OpenDHS.Finance\OpenDHS.Finance.csproj", "{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Finance", "OpenDHS.Finance\OpenDHS.Finance.csproj", "{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sites", "Sites", "{B2EB63A0-92AC-4CFE-97EE-122F0896EC45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.StudioMaggio.Site", "Sites\OpenDHS.StudioMaggio.Site\OpenDHS.StudioMaggio.Site.csproj", "{4759D7E3-C5D7-4533-92C5-60A40EAF7612}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612} = {B2EB63A0-92AC-4CFE-97EE-122F0896EC45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CE3E16D-DB9A-4580-9FD7-D9BFC2CDD0C6}
