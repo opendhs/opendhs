@@ -8,14 +8,19 @@
 
 /*--------------------------------------------------------------
 # General
+Primary color: rgb(209,220,115)
+Secondary: 
+Font: Avenir 
 --------------------------------------------------------------*/
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
 a {
-  color: #1acc8d;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -116,11 +121,11 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 80px;
-  transition: all 0.5s;
-  z-index: 997;
-  transition: all 0.5s;
-  background: rgba(1, 4, 136, 0.9);
+    height: 80px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background: rgba(209,220,115, 1);
 }
 
 #header.header-transparent {
@@ -128,8 +133,8 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(1, 4, 136, 0.9);
-  height: 60px;
+    background: rgba(209,220,115 0.9);
+    height: 60px;
 }
 
 #header .logo h1 {
@@ -412,14 +417,14 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  background: url("../img/hero-bg.jpg");
+  background: url("../img/landing_omniumbio.png");
   position: relative;
   padding: 120px 0 0 0;
 }
 
 #hero:before {
   content: "";
-  background: rgba(2, 5, 161, 0.91);
+  background: #d3e1dc5a;
   position: absolute;
   bottom: 0;
   top: 0;
