@@ -20,8 +20,8 @@ body {
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 a:hover {
@@ -185,7 +185,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: rgba(255, 255, 255, 0.7);
@@ -416,15 +416,17 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  background: url("../img/landing_omniumbio.png");
-  position: relative;
-  padding: 120px 0 0 0;
+    width: 100%;
+    background-color: rgb(209,220,115, 1);
+    /* background-image: url("../img/landing_omniumbio.png");
+    enable-background: unset;*/
+    position: relative;
+    padding: 120px 0 0 0;
 }
 
 #hero:before {
   content: "";
-  background: #d3e1dc5a;
+ /* background: #d3e1dc5a;*/
   position: absolute;
   bottom: 0;
   top: 0;
