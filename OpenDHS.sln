@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sites", "Sites", "{B2EB63A0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.StudioMaggio.Site", "Sites\OpenDHS.StudioMaggio.Site\OpenDHS.StudioMaggio.Site.csproj", "{4759D7E3-C5D7-4533-92C5-60A40EAF7612}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Omniumbio.Site", "Sites\OpenDHS.Omniumbio.Site\OpenDHS.Omniumbio.Site.csproj", "{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,12 +43,17 @@ Global
 		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4759D7E3-C5D7-4533-92C5-60A40EAF7612} = {B2EB63A0-92AC-4CFE-97EE-122F0896EC45}
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC} = {B2EB63A0-92AC-4CFE-97EE-122F0896EC45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CE3E16D-DB9A-4580-9FD7-D9BFC2CDD0C6}
