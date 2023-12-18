@@ -51,14 +51,15 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Studio Maggio</a></h1>
+            <h1 class="logo me-auto"><a asp-page="Index">Studio Maggio</a></h1>
+            
             <!-- ======= navbar ======= -->
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="team.html">Team</a></li>
-                    <li><a class="nav-link scrollto" href="offer.html">Offerta</a></li>
-                    <li><a class="nav-link scrollto" href="contact.html">Contatto</a></li>
+                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
+                    <li><a class="nav-link scrollto" asp-page="./Team">Team</a></li>
+                    <li><a class="nav-link scrollto" asp-page="./Offer">Offerta</a></li>
+                    <li><a class="nav-link scrollto" asp-page="./Contact">Contatto</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -105,7 +106,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
-                                    <div class="icon-box mt-4 mt-xl-0" href="/offer.html">
+                                    <div class="icon-box mt-4 mt-xl-0" asp-page="Offer">
                                         <!-- <i class="bx bx-cube-alt"></i> -->
                                         <h4>Il nostro servizio</h4>
                                         <p>
@@ -115,7 +116,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
-                                    <div class="icon-box mt-4 mt-xl-0" href="/contact.html">
+                                    <div class="icon-box mt-4 mt-xl-0" asp-page="/Contact">
                                         <!-- <i class="bx bx-images"></i> -->
                                         <h4>Venite a trovarci</h4>
                                         <p>Saremo lieti di accogliervi e consigliarvi nel nostro studio amichevole.</p>
@@ -159,10 +160,10 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Navigazione</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="team.html">Team</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="offer.html">Offerta</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contatto</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-page="Index">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-page="Team">Team</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-page="Offer">Offerta</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-page="Contact">Contatto</a></li>
                         </ul>
                     </div>
 
