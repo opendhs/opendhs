@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "OpenDHS.Omniumbio.Site/1.0.0": {
+        "runtime": {
+          "OpenDHS.Omniumbio.Site.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OpenDHS.Omniumbio.Site/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
