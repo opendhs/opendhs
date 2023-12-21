@@ -5,11 +5,11 @@ namespace OpenDHS.Shared.Data
 {
     public class UserEntity : IdentityUser<Guid>, IHasTimestamps
     {
-        public required string Name { get; set; }
-        public required string Lastname { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Lastname { get; set; } = string.Empty;
 
-        public Guid MediaId { get; set; }
-        public MediaEntity Avatar { get; set; } = null!;
+        public Guid? MediaId { get; set; }
+        public MediaEntity? Avatar { get; set; }
 
         DateTime? IHasTimestamps.AddedAt { get; set;  } = DateTime.UtcNow;
         DateTime? IHasTimestamps.UpdatedAt { get; set; } = DateTime.UtcNow;

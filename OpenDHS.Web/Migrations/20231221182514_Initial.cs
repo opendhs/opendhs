@@ -144,8 +144,8 @@ namespace OpenDHS.Web.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Lastname = table.Column<string>(type: "text", nullable: false),
-                    MediaId = table.Column<Guid>(type: "uuid", nullable: false),
-                    AvatarID = table.Column<Guid>(type: "uuid", nullable: false),
+                    MediaId = table.Column<Guid>(type: "uuid", nullable: true),
+                    AvatarID = table.Column<Guid>(type: "uuid", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -168,8 +168,7 @@ namespace OpenDHS.Web.Migrations
                         name: "FK_Users_Medias_AvatarID",
                         column: x => x.AvatarID,
                         principalTable: "Medias",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(

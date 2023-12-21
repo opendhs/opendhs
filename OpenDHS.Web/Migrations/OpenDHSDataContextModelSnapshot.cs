@@ -345,7 +345,7 @@ namespace OpenDHS.Web.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("AvatarID")
+                    b.Property<Guid?>("AvatarID")
                         .HasColumnType("uuid");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -369,7 +369,7 @@ namespace OpenDHS.Web.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("MediaId")
+                    b.Property<Guid?>("MediaId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
@@ -587,9 +587,7 @@ namespace OpenDHS.Web.Migrations
                 {
                     b.HasOne("OpenDHS.Shared.MediaEntity", "Avatar")
                         .WithMany()
-                        .HasForeignKey("AvatarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AvatarID");
 
                     b.Navigation("Avatar");
                 });
