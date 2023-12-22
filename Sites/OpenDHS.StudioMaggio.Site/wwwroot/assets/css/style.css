@@ -461,12 +461,20 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  height: 80vh;
-  /* background: url("https://picsum.photos/1920/846") top center; */
-  background-color: #BFBFBF;
-  background-size: cover;
-  margin-bottom: -200px;
+    width: 100%;
+    height: 80vh;
+    background-image: url("../img/index-desktop.jpg");
+    background-color: #BFBFBF;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    margin-bottom: -200px;
+ }
+
+@media (max-width:768px ) {
+    #hero {
+        background-image: url("../img/index-mobile.jpg");
+    }
 }
 
 #hero .container {
