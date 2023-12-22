@@ -4,6 +4,6 @@
     <ActiveDebugProfile>https</ActiveDebugProfile>
     <RazorPage_SelectedScaffolderID>RazorPageScaffolder</RazorPage_SelectedScaffolderID>
     <RazorPage_SelectedScaffolderCategoryPath>root/Common/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>C:\Projects\opendhs\Sites\OpenDHS.StudioMaggio.Site\Properties\PublishProfiles\studio-maggio - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Projects\opendhs\Sites\OpenDHS.StudioMaggio.Site\Properties\PublishProfiles\LocalDeploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
