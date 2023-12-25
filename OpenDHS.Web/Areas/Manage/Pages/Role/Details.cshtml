@@ -1,5 +1,5 @@
 ﻿@page
-@model OpenDHS.Web.Areas.Manage.Pages.User.DetailsModel
+@model OpenDHS.Web.Areas.Manage.Pages.Role.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -16,40 +16,39 @@
                             <div class="card-body">
                                 <dl class="row">
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Name)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.Name)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Name)
+                                        @Html.DisplayFor(model => model.RoleEntity.Name)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Lastname)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.AddedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Lastname)
+                                        @Html.DisplayFor(model => model.RoleEntity.AddedAt)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Email)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.UpdatedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Email)
+                                        @Html.DisplayFor(model => model.RoleEntity.UpdatedAt)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.PasswordHash)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.DeletedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.PasswordHash)
+                                        @Html.DisplayFor(model => model.RoleEntity.DeletedAt)
                                     </dd>
                                 </dl>
                             </div>
                             <div class="card-footer text-center py-3 d-flex flex-column">
-                                <a asp-page="./Edit" asp-route-id="@Model.UserEntity?.Id">Edit</a>
+                                <a asp-page="./Edit" asp-route-id="@Model.RoleEntity?.Id">Edit</a>
                                 <a asp-page="./Index">Back to List</a>
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </main>
     </div>
 </div>
-

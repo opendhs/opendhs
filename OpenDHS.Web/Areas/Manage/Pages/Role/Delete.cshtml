@@ -1,5 +1,5 @@
 ﻿@page
-@model OpenDHS.Web.Areas.Manage.Pages.User.DeleteModel
+@model OpenDHS.Web.Areas.Manage.Pages.Role.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -19,32 +19,32 @@
                             <div class="card-body">
                                 <dl class="row">
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Name)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.Name)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Name)
+                                        @Html.DisplayFor(model => model.RoleEntity.Name)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Lastname)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.AddedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Lastname)
+                                        @Html.DisplayFor(model => model.RoleEntity.AddedAt)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.Email)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.UpdatedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.Email)
+                                        @Html.DisplayFor(model => model.RoleEntity.UpdatedAt)
                                     </dd>
                                     <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.UserEntity.PasswordHash)
+                                        @Html.DisplayNameFor(model => model.RoleEntity.DeletedAt)
                                     </dt>
                                     <dd class="col-sm-8">
-                                        @Html.DisplayFor(model => model.UserEntity.PasswordHash)
+                                        @Html.DisplayFor(model => model.RoleEntity.DeletedAt)
                                     </dd>
-                                </dl>
+                                </dl> 
                                 <form method="post">
-                                    <input type="hidden" asp-for="UserEntity.Id" />
+                                    <input type="hidden" asp-for="RoleEntity.Id" />
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
                                             <input type="submit" value="Delete" class="btn btn-danger btn-block" />
