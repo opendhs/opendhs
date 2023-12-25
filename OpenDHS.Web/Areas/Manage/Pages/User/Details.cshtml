@@ -10,64 +10,34 @@
         <main>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-5">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h1 class="font-weight-light my-4">Details</h1></div>
+                            <div class="card-header"><h3 class="font-weight-light my-4 text-center">Details</h3></div>
                             <div class="card-body">
                                 <dl class="row">
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.UserName)
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.UserEntity.Name)
                                     </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.UserName)
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.UserEntity.Name)
                                     </dd>
-                                    <dt class="col-sm-2">
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.UserEntity.Lastname)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.UserEntity.Lastname)
+                                    </dd>
+                                    <dt class="col-sm-4">
                                         @Html.DisplayNameFor(model => model.UserEntity.Email)
                                     </dt>
-                                    <dd class="col-sm-10">
+                                    <dd class="col-sm-8">
                                         @Html.DisplayFor(model => model.UserEntity.Email)
                                     </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.ConcurrencyStamp)
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.UserEntity.PasswordHash)
                                     </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.ConcurrencyStamp)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.PhoneNumber)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.PhoneNumber)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.PhoneNumberConfirmed)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.PhoneNumberConfirmed)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.TwoFactorEnabled)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.TwoFactorEnabled)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.LockoutEnd)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.LockoutEnd)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.LockoutEnabled)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.LockoutEnabled)
-                                    </dd>
-                                    <dt class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.UserEntity.AccessFailedCount)
-                                    </dt>
-                                    <dd class="col-sm-10">
-                                        @Html.DisplayFor(model => model.UserEntity.AccessFailedCount)
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.UserEntity.PasswordHash)
                                     </dd>
                                 </dl>
                             </div>

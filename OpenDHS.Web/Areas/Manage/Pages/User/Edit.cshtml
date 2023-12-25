@@ -10,85 +10,37 @@
         <main>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-5">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit</h3></div>
                             <div class="card-body">
                                 <form method="post">
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <input type="hidden" asp-for="UserEntity.Id" />
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.UserName" class="control-label"></label>
-                                        <input asp-for="UserEntity.UserName" class="form-control" />
-                                        <span asp-validation-for="UserEntity.UserName" class="text-danger"></span>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="UserEntity.Name" class="form-control" />
+                                        <label asp-for="UserEntity.Name" class="control-label"></label>
+                                        <span asp-validation-for="UserEntity.Name" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.NormalizedUserName" class="control-label"></label>
-                                        <input asp-for="UserEntity.NormalizedUserName" class="form-control" />
-                                        <span asp-validation-for="UserEntity.NormalizedUserName" class="text-danger"></span>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="UserEntity.Lastname" class="form-control" />
+                                        <label asp-for="UserEntity.Lastname" class="control-label"></label>
+                                        <span asp-validation-for="UserEntity.Lastname" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="UserEntity.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
                                         <label asp-for="UserEntity.Email" class="control-label"></label>
-                                        <input asp-for="UserEntity.Email" class="form-control" />
                                         <span asp-validation-for="UserEntity.Email" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.NormalizedEmail" class="control-label"></label>
-                                        <input asp-for="UserEntity.NormalizedEmail" class="form-control" />
-                                        <span asp-validation-for="UserEntity.NormalizedEmail" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" asp-for="UserEntity.EmailConfirmed" /> @Html.DisplayNameFor(model => model.UserEntity.EmailConfirmed)
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="UserEntity.PasswordHash" class="form-control"/>
                                         <label asp-for="UserEntity.PasswordHash" class="control-label"></label>
-                                        <input asp-for="UserEntity.PasswordHash" class="form-control" />
                                         <span asp-validation-for="UserEntity.PasswordHash" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.SecurityStamp" class="control-label"></label>
-                                        <input asp-for="UserEntity.SecurityStamp" class="form-control" />
-                                        <span asp-validation-for="UserEntity.SecurityStamp" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.ConcurrencyStamp" class="control-label"></label>
-                                        <input asp-for="UserEntity.ConcurrencyStamp" class="form-control" />
-                                        <span asp-validation-for="UserEntity.ConcurrencyStamp" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.PhoneNumber" class="control-label"></label>
-                                        <input asp-for="UserEntity.PhoneNumber" class="form-control" />
-                                        <span asp-validation-for="UserEntity.PhoneNumber" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" asp-for="UserEntity.PhoneNumberConfirmed" /> @Html.DisplayNameFor(model => model.UserEntity.PhoneNumberConfirmed)
-                                        </label>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" asp-for="UserEntity.TwoFactorEnabled" /> @Html.DisplayNameFor(model => model.UserEntity.TwoFactorEnabled)
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.LockoutEnd" class="control-label"></label>
-                                        <input asp-for="UserEntity.LockoutEnd" class="form-control" />
-                                        <span asp-validation-for="UserEntity.LockoutEnd" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" asp-for="UserEntity.LockoutEnabled" /> @Html.DisplayNameFor(model => model.UserEntity.LockoutEnabled)
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UserEntity.AccessFailedCount" class="control-label"></label>
-                                        <input asp-for="UserEntity.AccessFailedCount" class="form-control" />
-                                        <span asp-validation-for="UserEntity.AccessFailedCount" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Save" class="btn btn-primary" />
+                                    <div class="mt-4 mb-0">
+                                        <div class="d-grid">
+                                            <input type="submit" value="Save" class="btn btn-primary btn-block" />
+                                        </div>
                                     </div>
                                 </form>
                             </div>
