@@ -419,7 +419,8 @@ h6 {
     height: 1000px;
     background-image: url("../img/bio/immagine-base.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-color: cornflowerblue;
+    background-position: center;
     padding: 10px;
 }
 
