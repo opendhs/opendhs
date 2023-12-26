@@ -1,5 +1,5 @@
 ﻿@page
-@model OpenDHS.Web.Areas.Manage.Pages.User.EditModel
+@model OpenDHS.Web.Areas.Manage.Pages.Role.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -16,26 +16,26 @@
                             <div class="card-body">
                                 <form method="post">
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                    <input type="hidden" asp-for="UserEntity.Id" />
+                                    <input type="hidden" asp-for="RoleEntity.Id" />
                                     <div class="form-floating mb-3">
-                                        <input asp-for="UserEntity.Name" class="form-control" />
-                                        <label asp-for="UserEntity.Name" class="control-label"></label>
-                                        <span asp-validation-for="UserEntity.Name" class="text-danger"></span>
+                                        <input asp-for="RoleEntity.Name" class="form-control" />
+                                        <label asp-for="RoleEntity.Name" class="control-label"></label>
+                                        <span asp-validation-for="RoleEntity.Name" class="text-danger"></span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input asp-for="UserEntity.Lastname" class="form-control" />
-                                        <label asp-for="UserEntity.Lastname" class="control-label"></label>
-                                        <span asp-validation-for="UserEntity.Lastname" class="text-danger"></span>
+                                        <input asp-for="RoleEntity.AddedAt" class="form-control" readonly/>
+                                        <label asp-for="RoleEntity.AddedAt" class="control-label"></label>
+                                        <span asp-validation-for="RoleEntity.AddedAt" class="text-danger"></span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input asp-for="UserEntity.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" readonly/>
-                                        <label asp-for="UserEntity.Email" class="control-label"></label>
-                                        <span asp-validation-for="UserEntity.Email" class="text-danger"></span>
+                                        <input asp-for="RoleEntity.UpdatedAt" class="form-control" readonly/>
+                                        <label asp-for="RoleEntity.UpdatedAt" class="control-label"></label>
+                                        <span asp-validation-for="RoleEntity.UpdatedAt" class="text-danger"></span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input asp-for="UserEntity.PasswordHash" class="form-control"/>
-                                        <label asp-for="UserEntity.PasswordHash" class="control-label"></label>
-                                        <span asp-validation-for="UserEntity.PasswordHash" class="text-danger"></span>
+                                        <input asp-for="RoleEntity.DeletedAt" class="form-control" readonly/>
+                                        <label asp-for="RoleEntity.DeletedAt" class="control-label"></label>
+                                        <span asp-validation-for="RoleEntity.DeletedAt" class="text-danger"></span>
                                     </div>
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
@@ -51,10 +51,9 @@
                     </div>
                 </div>
             </div>
-         </main>
+        </main>
     </div>
 </div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

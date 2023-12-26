@@ -1,0 +1,45 @@
+﻿@page
+@model OpenDHS.Web.Areas.Manage.Pages.Role.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Role</h3></div>
+                            <div class="card-body">
+                                <form method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="RoleEntity.Name" class="form-control" placeholder="Enter your name" />
+                                        <label asp-for="RoleEntity.Name" class="control-label"></label>
+                                        <span asp-validation-for="RoleEntity.Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="mt-4 mb-0">
+                                        <div class="d-grid">
+                                            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

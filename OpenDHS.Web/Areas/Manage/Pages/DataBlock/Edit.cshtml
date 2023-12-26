@@ -1,0 +1,75 @@
+﻿@page
+@model OpenDHS.Web.Areas.Manage.Pages.DataBlock.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DataBlockEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.Name" class="control-label"></label>
+                <input asp-for="DataBlockEntity.Name" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.Description" class="control-label"></label>
+                <input asp-for="DataBlockEntity.Description" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.Type" class="control-label"></label>
+                <input asp-for="DataBlockEntity.Type" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.Data" class="control-label"></label>
+                <input asp-for="DataBlockEntity.Data" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.DataContanerId" class="control-label"></label>
+                <input asp-for="DataBlockEntity.DataContanerId" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.DataContanerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.PageContanerId" class="control-label"></label>
+                <input asp-for="DataBlockEntity.PageContanerId" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.PageContanerId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="DataBlockEntity.ID" />
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.AddedAt" class="control-label"></label>
+                <input asp-for="DataBlockEntity.AddedAt" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.AddedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.UpdatedAt" class="control-label"></label>
+                <input asp-for="DataBlockEntity.UpdatedAt" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataBlockEntity.DeletedAt" class="control-label"></label>
+                <input asp-for="DataBlockEntity.DeletedAt" class="form-control" />
+                <span asp-validation-for="DataBlockEntity.DeletedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
