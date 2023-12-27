@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenDHS.Shared\OpenDHS.Shared.csproj" />
+    <ProjectReference Include="..\OpenDHS.Shared\OpenCRM.Core.csproj" />
   </ItemGroup>
 
 </Project>
