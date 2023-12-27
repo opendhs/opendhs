@@ -12,7 +12,7 @@ using OpenDHS.Web.Data;
 namespace OpenDHS.Web.Migrations
 {
     [DbContext(typeof(OpenDHSDataContext))]
-    [Migration("20231221182514_Initial")]
+    [Migration("20231227165845_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -38,10 +38,10 @@ namespace OpenDHS.Web.Migrations
                         .IsRequired()
                         .HasColumnType("jsonb");
 
-                    b.Property<Guid>("DataContainerID")
+                    b.Property<Guid?>("DataContainerID")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("DataContanerId")
+                    b.Property<Guid?>("DataContanerId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DeletedAt")
@@ -55,10 +55,7 @@ namespace OpenDHS.Web.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("PageContainerID")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("PageContanerId")
+                    b.Property<Guid?>("PageContainerEntityID")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Type")
@@ -72,7 +69,7 @@ namespace OpenDHS.Web.Migrations
 
                     b.HasIndex("DataContainerID");
 
-                    b.HasIndex("PageContainerID");
+                    b.HasIndex("PageContainerEntityID");
 
                     b.ToTable("DataBlocks", (string)null);
                 });
@@ -542,19 +539,13 @@ namespace OpenDHS.Web.Migrations
                 {
                     b.HasOne("OpenDHS.Shared.Data.DataContainerEntity", "DataContainer")
                         .WithMany("DataBlocks")
-                        .HasForeignKey("DataContainerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DataContainerID");
 
-                    b.HasOne("OpenDHS.Shared.Data.PageContainerEntity", "PageContainer")
+                    b.HasOne("OpenDHS.Shared.Data.PageContainerEntity", null)
                         .WithMany("PageBlocks")
-                        .HasForeignKey("PageContainerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PageContainerEntityID");
 
                     b.Navigation("DataContainer");
-
-                    b.Navigation("PageContainer");
                 });
 
             modelBuilder.Entity("OpenDHS.Shared.Data.RoleClaimEntity", b =>
