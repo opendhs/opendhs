@@ -1,0 +1,68 @@
+﻿@page
+@model OpenDHS.Web.Areas.Manage.Pages.DataContainer.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4 mt-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between">
+                    <div>
+                        <i class="fas fa-table me-1"></i>
+                        Create DataContainer
+                    </div>
+                    <div>
+                        <a asp-page="Create">Create New</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataContainerEntity[0].Type)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataContainerEntity[0].AddedAt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataContainerEntity[0].UpdatedAt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataContainerEntity[0].DeletedAt)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.DataContainerEntity) {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AddedAt)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DeletedAt)
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

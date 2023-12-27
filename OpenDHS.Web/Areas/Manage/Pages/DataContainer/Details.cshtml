@@ -1,0 +1,54 @@
+﻿@page
+@model OpenDHS.Web.Areas.Manage.Pages.DataContainer.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="font-weight-light my-4 text-center">Details</h3></div>
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataContainerEntity.Type)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.DataContainerEntity.Type)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataContainerEntity.AddedAt)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.DataContainerEntity.AddedAt)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataContainerEntity.UpdatedAt)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.DataContainerEntity.UpdatedAt)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataContainerEntity.DeletedAt)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.DataContainerEntity.DeletedAt)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="card-footer text-center py-3 d-flex flex-column">
+                                <a asp-page="./Edit" asp-route-id="@Model.DataContainerEntity?.ID">Edit</a>
+                                <a asp-page="./Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
