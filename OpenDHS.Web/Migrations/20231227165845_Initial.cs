@@ -180,10 +180,9 @@ namespace OpenDHS.Web.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     Type = table.Column<string>(type: "text", nullable: false),
                     Data = table.Column<string>(type: "jsonb", nullable: false),
-                    DataContanerId = table.Column<Guid>(type: "uuid", nullable: false),
-                    DataContainerID = table.Column<Guid>(type: "uuid", nullable: false),
-                    PageContanerId = table.Column<Guid>(type: "uuid", nullable: false),
-                    PageContainerID = table.Column<Guid>(type: "uuid", nullable: false),
+                    DataContanerId = table.Column<Guid>(type: "uuid", nullable: true),
+                    DataContainerID = table.Column<Guid>(type: "uuid", nullable: true),
+                    PageContainerEntityID = table.Column<Guid>(type: "uuid", nullable: true),
                     AddedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -195,14 +194,12 @@ namespace OpenDHS.Web.Migrations
                         name: "FK_DataBlocks_DataContainers_DataContainerID",
                         column: x => x.DataContainerID,
                         principalTable: "DataContainers",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
-                        name: "FK_DataBlocks_Pages_PageContainerID",
-                        column: x => x.PageContainerID,
+                        name: "FK_DataBlocks_Pages_PageContainerEntityID",
+                        column: x => x.PageContainerEntityID,
                         principalTable: "Pages",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -332,9 +329,9 @@ namespace OpenDHS.Web.Migrations
                 column: "DataContainerID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DataBlocks_PageContainerID",
+                name: "IX_DataBlocks_PageContainerEntityID",
                 table: "DataBlocks",
-                column: "PageContainerID");
+                column: "PageContainerEntityID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RoleClaims_RoleId",
