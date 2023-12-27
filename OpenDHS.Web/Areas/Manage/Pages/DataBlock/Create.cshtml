@@ -5,68 +5,63 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>DataBlockEntity</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.Name" class="control-label"></label>
-                <input asp-for="DataBlockEntity.Name" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.Name" class="text-danger"></span>
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Create DataBlock</h3></div>
+                            <div class="card-body">
+                                <form method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.Name" class="form-control" placeholder="Name"/>
+                                        <label asp-for="DataBlockEntity.Name" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.Description" class="form-control" placeholder="Description"/>
+                                        <label asp-for="DataBlockEntity.Description" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.Description" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.Type" class="form-control" placeholder="Type"/>
+                                        <label asp-for="DataBlockEntity.Type" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.Type" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.Data" class="form-control" placeholder="Data"/>
+                                        <label asp-for="DataBlockEntity.Data" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.Data" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.DataContanerId" class="form-control" placeholder="DataContainerId" />
+                                        <label asp-for="DataBlockEntity.DataContanerId" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.DataContanerId" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="DataBlockEntity.PageContanerId" class="form-control" placeholder="PageContainerId"/>
+                                        <label asp-for="DataBlockEntity.PageContanerId" class="control-label"></label>
+                                        <span asp-validation-for="DataBlockEntity.PageContanerId" class="text-danger"></span>
+                                    </div>
+                                    <div class="mt-4 mb-0">
+                                        <div class="d-grid">
+                                            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center py-3">
+                                <a asp-page="Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.Description" class="control-label"></label>
-                <input asp-for="DataBlockEntity.Description" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.Type" class="control-label"></label>
-                <input asp-for="DataBlockEntity.Type" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.Data" class="control-label"></label>
-                <input asp-for="DataBlockEntity.Data" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.DataContanerId" class="control-label"></label>
-                <input asp-for="DataBlockEntity.DataContanerId" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.DataContanerId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.PageContanerId" class="control-label"></label>
-                <input asp-for="DataBlockEntity.PageContanerId" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.PageContanerId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.AddedAt" class="control-label"></label>
-                <input asp-for="DataBlockEntity.AddedAt" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.AddedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.UpdatedAt" class="control-label"></label>
-                <input asp-for="DataBlockEntity.UpdatedAt" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.UpdatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataBlockEntity.DeletedAt" class="control-label"></label>
-                <input asp-for="DataBlockEntity.DeletedAt" class="form-control" />
-                <span asp-validation-for="DataBlockEntity.DeletedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </main>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -5,80 +5,94 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].Data)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].DataContanerId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].PageContanerId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].AddedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].UpdatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataBlockEntity[0].DeletedAt)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.DataBlockEntity) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataContanerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageContanerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeletedAt)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4 mt-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between">
+                    <div>
+                        <i class="fas fa-table me-1"></i>
+                        DataBlocks
+                    </div>
+                    <div>
+                        <a asp-page="Create">Create New</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].Type)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].Data)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].DataContanerId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].PageContanerId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].AddedAt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].UpdatedAt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].DeletedAt)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.DataBlockEntity) {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DataContanerId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PageContanerId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AddedAt)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DeletedAt)
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

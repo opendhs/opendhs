@@ -5,69 +5,80 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="font-weight-light my-4 text-center">Details</h3></div>
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.Name)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.Name)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.Description)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.Description)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.Type)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.Type)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.Data)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.Data)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.DataContanerId)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.DataContanerId)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.PageContanerId)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.PageContanerId)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.AddedAt)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.AddedAt)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.UpdatedAt)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.UpdatedAt)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.DataBlockEntity.DeletedAt)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.DataBlockEntity.DeletedAt)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="card-footer text-center py-3 d-flex flex-column">
+                                <a asp-page="./Edit" asp-route-id="@Model.DataBlockEntity?.ID">Edit</a> |
+                                <a asp-page="./Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</div>
 
-<div>
-    <h4>DataBlockEntity</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.Type)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.Type)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.Data)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.Data)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.DataContanerId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.DataContanerId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.PageContanerId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.PageContanerId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.AddedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.AddedAt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.UpdatedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.UpdatedAt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataBlockEntity.DeletedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataBlockEntity.DeletedAt)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DataBlockEntity?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
