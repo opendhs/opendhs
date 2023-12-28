@@ -7,7 +7,7 @@
 
 <div class="layoutSidenav_content">
     <main>
-        <div class="container-fluid px-4 mt-4">
+        <div class="container px-4 mt-4">
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between">
                     <div>
@@ -35,12 +35,6 @@
                                     @Html.DisplayNameFor(model => model.DataBlockEntity[0].Data)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].DataContanerId)
-                                </th>
-                                @* <th>
-                                    @Html.DisplayNameFor(model => model.DataBlockEntity[0].PageContanerId)
-                                </th> *@
-                                <th>
                                     @Html.DisplayNameFor(model => model.DataBlockEntity[0].AddedAt)
                                 </th>
                                 <th>
@@ -67,12 +61,6 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Data)
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.DataContanerId)
-                                        </td>
-                                      @*   <td>
-                                            @Html.DisplayFor(modelItem => item.PageContanerId)
-                                        </td> *@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.AddedAt)
                                         </td>

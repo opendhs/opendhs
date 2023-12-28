@@ -25,7 +25,6 @@ namespace OpenDHS.Web.Areas.Manage.Pages.User
 
         public IActionResult OnGet()
         {
-
             return Page();
         }
 
@@ -42,7 +41,7 @@ namespace OpenDHS.Web.Areas.Manage.Pages.User
             }
 
             // Teniendo las anotaciones compare esto no se debe verificar nunca! 
-            if (Model.Password != Model.PasswordConfirm) {
+            if (Model.Password != Model.ConfirmPassword) {
                 return Page();
             }
 

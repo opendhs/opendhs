@@ -18,7 +18,7 @@ namespace OpenDHS.Web.Areas.Manage.Pages.User
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string PasswordConfirm { get; set; } = string.Empty;
+        public string ConfirmPassword { get; set; } = string.Empty;
 
     }
 }
