@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Projects\opendhs\Sites\OpenDHS.Omniumbio.Site\bin\Release\net7.0\publish\</_PublishTargetUrl>
-    <History>True|2023-12-27T13:28:40.1365457Z;</History>
+    <History>True|2023-12-28T09:25:38.7270374Z;True|2023-12-27T14:28:40.1365457+01:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
