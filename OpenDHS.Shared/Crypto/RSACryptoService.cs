@@ -1,4 +1,4 @@
-﻿using OpenDHS.Shared.Models;
+﻿using OpenCRM.Core.Crypto;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -14,9 +14,9 @@ namespace OpenDHS.Shared.Services
             rsaCryptoServiceProvider.FromXmlString(publicXmlKey);
         }
 
-        public static RSAKeyPairs GetKeyPairs() {
+        public static RSAKeyPairsModel GetKeyPairs() {
 
-            var rsaKeyPairs = new RSAKeyPairs();
+            var rsaKeyPairs = new RSAKeyPairsModel();
             var rsaCryptoServiceProvider = new RSACryptoServiceProvider(2048);
             rsaKeyPairs.PublicKey = rsaCryptoServiceProvider.ExportParameters(false);
             rsaKeyPairs.PrivateKey = rsaCryptoServiceProvider.ExportParameters(true);

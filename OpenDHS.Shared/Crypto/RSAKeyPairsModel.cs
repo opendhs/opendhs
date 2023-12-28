@@ -8,25 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace OpenDHS.Shared.Models
+namespace OpenCRM.Core.Crypto
 {
-    public class RSAKeyPairs
+    public class RSAKeyPairsModel
     {
-        public RSAParameters  PublicKey { get; set; }
+        public RSAParameters PublicKey { get; set; }
         public RSAParameters PrivateKey { get; set; }
 
-     
+
     }
 
-    public static class RSAKeyPairsExtensions {
-        public static string GetStringPublicKey(this RSAKeyPairs rsaKeyPairs)
+    public static class RSAKeyPairsExtensions
+    {
+        public static string GetStringPublicKey(this RSAKeyPairsModel rsaKeyPairs)
         {
             var sw = new StringWriter();
             var xmlSerializer = new XmlSerializer(typeof(RSAParameters));
             xmlSerializer.Serialize(sw, rsaKeyPairs.PublicKey);
             return sw.ToString();
         }
-        public static string GetStringPrivateKey(this RSAKeyPairs rsaKeyPairs)
+        public static string GetStringPrivateKey(this RSAKeyPairsModel rsaKeyPairs)
         {
             var sw = new StringWriter();
             var xmlSerializer = new XmlSerializer(typeof(RSAParameters));
