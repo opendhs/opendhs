@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4fc3e292-155d-4e05-ae98-d53d88af05bf</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenCRM.Manage\OpenCRM.Manage.csproj" />
+    <ProjectReference Include="..\OpenCRM.SwissLPD\OpenCRM.SwissLPD.csproj" />
+    <ProjectReference Include="..\OpenDHS.Finance\OpenCRM.Finance.csproj" />
+    <ProjectReference Include="..\OpenDHS.Shared\OpenCRM.Core.csproj" />
+  </ItemGroup>
+
+</Project>
